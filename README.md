@@ -9,12 +9,7 @@ API key. Built with vanilla JavaScript, a modular architecture, and a retro pixe
 
 ## Preview
 
-> Add a screenshot here: run the app, take a screenshot, and save it to `Screenshots/skycast_preview.png`
-
-```
-Screenshots/
-└── skycast_preview.png   ← drag your screenshot here
-```
+![Skycast preview](Screenshots/skycast_preview.png)
 
 ---
 
