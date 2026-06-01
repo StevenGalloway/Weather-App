@@ -1,0 +1,12 @@
+{
+  "name": "skycast",
+  "version": "2.0.0",
+  "description": "SKYCAST — real-time weather widget",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
