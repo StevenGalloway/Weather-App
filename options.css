@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'LoRes15';
+  src: url('fonts/LoRes15OT-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'LoRes12';
+  src: url('fonts/LoRes12OT-Regular.ttf') format('truetype');
+}
+
+:root {
+  --color-purple:    #7B61FF;
+  --color-cyan:      #00D4FF;
+  --color-text:      #E8E8FF;
+  --color-bg:        #0F0F1A;
+  --color-bg-chrome: #1A1A2E;
+  --color-border:    rgba(123, 97, 255, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'LoRes12', 'Courier New', monospace;
+  background: #050508;
+  color: var(--color-text);
+  padding: 16px;
+  min-width: 320px;
+}
+
+.options-window {
+  background: var(--color-bg);
+  border: 2px solid var(--color-purple);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.25);
+}
+
+.options-header {
+  background: var(--color-bg-chrome);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.options-title {
+  font-family: 'LoRes15', monospace;
+  font-size: 14px;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--color-purple), var(--color-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.options-body { padding: 20px; }
+
+.settings-section h2 {
+  font-family: 'LoRes15', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.settings-section p {
+  font-size: 12px;
+  color: rgba(232, 232, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.settings-section a {
+  color: var(--color-cyan);
+  text-decoration: none;
+}
+.settings-section a:hover { text-decoration: underline; }
+
+.field-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.field-group input {
+  flex: 1;
+  background: rgba(123, 97, 255, 0.1);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: 'LoRes12', monospace;
+  font-size: 12px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field-group input:focus { border-color: var(--color-cyan); }
+
+.field-group button {
+  background: var(--color-purple);
+  color: var(--color-text);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-family: 'LoRes12', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.field-group button:hover { opacity: 0.85; }
+
+.status-msg { font-size: 11px; letter-spacing: 0.5px; }
+.status-msg[hidden] { display: none; }
+.status-msg.success { color: #BEEC8E; }
+.status-msg.error   { color: #FFB6CD; }
+
+.hint {
+  font-size: 10px;
+  color: rgba(232, 232, 255, 0.4);
+  margin-top: 10px;
+  line-height: 1.5;
+}

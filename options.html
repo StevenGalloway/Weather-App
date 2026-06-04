@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SKYCAST — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="options-window">
+
+    <header class="options-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+           aria-hidden="true" focusable="false">
+        <title>SKYCAST</title>
+        <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"
+              stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 11l-3 6h5l-3 6"
+              stroke="#7B61FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1 class="options-title">SKYCAST Settings</h1>
+    </header>
+
+    <main class="options-body">
+      <section class="settings-section" aria-labelledby="apiKeyHeading">
+        <h2 id="apiKeyHeading">API Key</h2>
+        <p>
+          Enter your
+          <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">
+            OpenWeatherMap
+          </a>
+          API key. Free accounts work for all SKYCAST features.
+          New keys activate within 2 hours of registration.
+        </p>
+        <div class="field-group">
+          <input
+            type="password"
+            id="apiKeyInput"
+            placeholder="Paste your API key here"
+            autocomplete="off"
+            aria-label="OpenWeatherMap API key"
+            aria-describedby="apiKeyHint"
+          />
+          <button id="saveBtn" type="button">Save</button>
+        </div>
+        <p id="statusMsg" class="status-msg" aria-live="polite" hidden></p>
+        <p id="apiKeyHint" class="hint">
+          Your key is stored locally in your browser and sent only to OpenWeatherMap.
+        </p>
+      </section>
+    </main>
+
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
