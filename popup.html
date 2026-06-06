@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKYCAST</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="window" role="application" aria-label="SKYCAST Weather Widget">
+
+    <header class="title-bar">
+      <div class="brand">
+        <svg class="logo-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+             aria-hidden="true" focusable="false">
+          <title>SKYCAST</title>
+          <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"
+                stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 11l-3 6h5l-3 6"
+                stroke="#7B61FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="title">SKYCAST</span>
+      </div>
+      <div class="title-right">
+        <span id="cityName" class="city-name" aria-live="polite" aria-atomic="true"></span>
+        <div class="window-controls" role="presentation" aria-hidden="true">
+          <span class="control minimize"></span>
+          <span class="control maximize"></span>
+          <span class="control close"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="weatherContainer">
+      <div class="weather-content">
+
+        <p id="weatherMessage" class="weather-message"
+           aria-live="polite" aria-atomic="true">Loading...</p>
+
+        <div class="weather-details" role="list" aria-label="Current conditions">
+          <div class="detail-item" role="listitem"><span id="humidity"></span></div>
+          <div class="detail-item" role="listitem"><span id="wind"></span></div>
+          <div class="detail-item" role="listitem"><span id="aqi"></span></div>
+          <div class="detail-item" role="listitem"><span id="uvIndex"></span></div>
+        </div>
+
+        <div class="center-temp">
+          <h1 id="temperature" class="temperature"
+              aria-live="polite" aria-atomic="true"></h1>
+          <p id="feelsLike" class="feels-like"></p>
+          <p id="sunTimes" class="sun-times"></p>
+        </div>
+
+        <section class="bottom-panel" aria-label="Forecast">
+          <div id="hourlyStrip" class="hourly-strip"
+               role="list" aria-label="Hourly forecast"></div>
+          <div id="forecastRow" class="forecast-row"
+               role="list" aria-label="3-day forecast"></div>
+        </section>
+
+      </div>
+
+      <!-- Setup overlay — shown when no API key is stored -->
+      <div id="setupOverlay" class="setup-overlay" hidden
+           role="dialog" aria-modal="true" aria-labelledby="setupTitle">
+        <div class="setup-content">
+          <p id="setupTitle" class="setup-title">API Key Required</p>
+          <p class="setup-desc">
+            Paste your
+            <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">
+              OpenWeatherMap
+            </a>
+            key to get started. New keys activate within 2 hours.
+          </p>
+          <p id="setupError" class="setup-error" hidden aria-live="assertive"></p>
+          <input
+            type="password"
+            id="setupKeyInput"
+            class="setup-input"
+            placeholder="Paste API key here"
+            autocomplete="off"
+            aria-label="OpenWeatherMap API key"
+          />
+          <button id="setupSaveBtn" type="button" class="setup-btn">Save Key</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="helpers.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
