@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SKYCAST",
+  "version": "2.0.0",
+  "description": "Real-time weather widget with hourly forecast, UV index, AQI, and animated conditions.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icons/weather.png",
+      "48":  "icons/weather.png",
+      "128": "icons/weather.png"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": ["geolocation", "storage"],
+  "host_permissions": [
+    "https://api.openweathermap.org/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
